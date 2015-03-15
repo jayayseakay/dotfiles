@@ -152,8 +152,31 @@ bar {
         status_command i3status
 }
 
+## Disable top bar for use with i3-gaps #
+
 for_window [class="^.*"] border pixel 0
 
-gaps inner 10
+#########################################
 
+## Set Gaps ##
+gaps outer 10
+gaps inner 10
+#############
+
+## Set background ##
 exec feh --bg-scale ~/Pictures/wallpaper/tatooine.jpg
+###################
+
+## Lock screen ##
+bindsym Shift+Control+l exec --no-startup-id i3lock -f -u
+################
+
+## Notebook Controls ##
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%- #decrease sound volume
+bindsym XF86AudioMute exec amixer set Master toggle # mute sound
+#######################
